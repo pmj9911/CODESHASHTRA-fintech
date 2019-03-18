@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-sm navbar1">
+  <div class="collapse navbar-collapse BtnForNav">
+    <div class="row">
+    <a  class="nav-link BtnForNav" routerLink="home" routerLinkActive="active" >HOME</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    </ul>
+
+    <div class="my-2 my-lg-0" *ngIf="!userPresent;else userProfileBlock">
+      <button  class="btn BtnForNav mr-sm-2 float-right " (click)="loadLogin()">SIGN IN</button>
+      <button class="btn BtnForNav my-2 my-sm-0 float-right " (click)="goToSignup()">SIGN UP</button>
+    </div>
+    <ng-template #userProfileBlock>
+      <div class="my-2 my-lg-0">
+        <!-- <li class="dropdown" style="list-style-type:none;margin-right:100px">
+            <button class="btn dropdown-toggle" data-toggle="dropdown" style="font-size:20px;color: white;font-weight: small"></button>
+            <ul class="dropdown-menu">
+              <li></li>
+            </ul>
+        </li> -->
+        <div class="dropdown" style="margin-right:150px">
+          <button class="btn dropdown-toggle float-right" type="button" id="dropdownMenu2"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:20px;color: white; font-weight: normal">
+            {{ user.email }}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+
+            <button class="dropdown-item float-right " type="button" (click)="logoutUser()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+<div class="bodyForFooter">
+  <app-footer></app-footer>
+</div>

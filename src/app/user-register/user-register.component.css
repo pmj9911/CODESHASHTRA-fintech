@@ -1,0 +1,19 @@
+.btn{
+    background: red;
+    color: white;
+    outline: none;
+}
+/*.btn:hover{*/
+/*background: white;*/
+/*color: red;*/
+/*}*/
+.jumbotron {
+    height: 100%;
+    background: rgba(255, 0, 0, 0.05);
+
+}
+.container{
+
+
+}
+

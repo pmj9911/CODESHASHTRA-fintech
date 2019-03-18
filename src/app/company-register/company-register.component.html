@@ -1,0 +1,103 @@
+<div class="jumbotron" >
+  <div class="mat-bottom-sheet-container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <br>
+        <h3 style="color: red"><strong>Registration Details</strong></h3>
+        <form id="f" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+          <div class="form-group">
+            <label for="CName">Company Name</label>
+            <input type="text" class="form-control" placeholder="Enter Company Name" name="CName" [(ngModel)]="model.CName" #CName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && CName.invalid }" required />
+            <div *ngIf="f.submitted && CName.invalid" class="invalid-feedback">
+              <div *ngIf="CName.errors.required">Company Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Address">Address of the Company</label>
+            <input type="text"class="form-control" placeholder="Enter Address" name="Address" [(ngModel)]="model.Address" #Address="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Address.invalid }" required />
+            <div *ngIf="f.submitted && Address.invalid" class="invalid-feedback">
+              <div *ngIf="Address.errors.required">Address is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="text" class="form-control" placeholder="Enter Email ID" name="Email" [(ngModel)]="model.Email" #Email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Email.invalid }" required email />
+            <div *ngIf="f.submitted && Email.invalid" class="invalid-feedback">
+              <div *ngIf="Email.errors.required">Email is required</div>
+              <div *ngIf="Email.errors.Email">Email must be a valid email address</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ContactNo">ContactNo</label>
+            <input type="text" class="form-control" placeholder="Enter Contact Number"  name="ContactNo" [(ngModel)]="model.ContactNo" #ContactNo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ContactNo.invalid }" required minlength="10" />
+            <div *ngIf="f.submitted && ContactNo.invalid" class="invalid-feedback">
+              <div *ngIf="ContactNo.errors.required">Contact is required</div>
+              <div *ngIf="ContactNo.errors.minlength">Contact must be 10 numbers long</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="AltContactNo">Alternative ContactNo</label>
+            <input type="text" class="form-control" placeholder="Enter Alternative Contact Number"  name="AltContactNo" [(ngModel)]="model.AltContactNo" #AltContactNo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && AltContactNo.invalid }" required minlength="10" />
+            <div *ngIf="f.submitted && AltContactNo.invalid" class="invalid-feedback">
+              <div *ngIf="AltContactNo.errors.required">Alternative Contact Number is required</div>
+              <div *ngIf="AltContactNo.errors.minlength">Contact must be 10 numbers long</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="PocName">Enter Poc Name</label>
+            <input type="text"class="form-control" placeholder="Enter Your POC Name" name="PocName" [(ngModel)]="model.PocName" #PocName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && PocName.invalid }" required />
+            <div *ngIf="f.submitted && PocName.invalid" class="invalid-feedback">
+              <div *ngIf="PocName.errors.required">POC Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="PocNo">Enter Poc Number</label>
+            <input type="text"class="form-control" placeholder="Enter Your POC No" name="PocNo" [(ngModel)]="model.PocNo" #PocNo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && PocNo.invalid }" required />
+            <div *ngIf="f.submitted && PocNo.invalid" class="invalid-feedback">
+              <div *ngIf="PocNo.errors.required">POC Number is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="GstNo">Enter Gst Number</label>
+            <input type="text"class="form-control" placeholder="Enter Your GST No" name="GstNo" [(ngModel)]="model.GstNo" #GstNo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && GstNo.invalid }" required />
+            <div *ngIf="f.submitted && GstNo.invalid" class="invalid-feedback">
+              <div *ngIf="GstNo.errors.required">GST Number is required</div>
+            </div>
+          </div>
+          <div class="form-group login-group-checkbox" [class.has-error]="q1.touched && q1.invalid">
+            <label for="q1" class="control-label">What category do you fall in?</label>
+            <div class="form-control">
+              <label class="radio-inline">
+                <input type="radio" required  name="q1" value="Donor" [(ngModel)]="model.q1" #q1="ngModel">Donor
+              </label>
+              <label class="radio-inline">
+                <input type="radio" required #q1="ngModel" name="q1" value="Receiver" [(ngModel)]="model.q1">Receiver
+              </label>
+
+
+              <br>
+              <span  style="color: red" class="help-block" *ngIf="q1.touched && q1.invalid">
+                Please select one option.
+              </span>
+            </div>
+          </div>
+          <br>
+
+          <!--<div class="form-group login-group-checkbox">-->
+          <!--<label for="reg_gender" >Gender</label> <br>-->
+          <!--<input type="radio" class="" name="reg_gender" id="male" placeholder="username">-->
+          <!--<label for="male">Male</label>-->
+          <!--<br>-->
+          <!--<input type="radio" class="" name="reg_gender" id="female" placeholder="username">-->
+          <!--<label for="female">Female</label>-->
+          <!--</div>-->
+          <div class="form-group">
+
+            <button mat-button [disabled]="q1.errors" class="btn" >Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,48 @@
+
+<div class="jumbotron bg-info" >
+  <div class="mat-bottom-sheet-container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <br>
+        <a class="round" routerLink="/donorinfo" routerLinkActive="active">&#8249;</a>
+        <h3 class="text-center" style="color: black">Enquiry Form</h3>
+        <form id="f" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+          <div class="form-group">
+
+          <div class="form-group">
+            <label for="Reason">Reason</label>
+            <input type="text" class="form-control" placeholder="Enter Reason" name="Reason" [(ngModel)]="model.Reason" #Reason="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Reason.invalid }" required />
+            <div *ngIf="f.submitted && Reason.invalid" class="invalid-feedback">
+              <div *ngIf="Reason.errors.required">Reason is required</div>
+            </div>
+          </div>
+            <label for="Description">Description</label>
+            <input type="text" class="form-control" placeholder="" name="Description" [(ngModel)]="model.Description" #Description="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Description.invalid }" required />
+            <div *ngIf="f.submitted && Description.invalid" class="invalid-feedback">
+              <div *ngIf="Description.errors.required">Description is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Money">Money</label>
+            <input type="text"class="form-control" placeholder="Enter Money needed" name="Money" [(ngModel)]="model.Money" #Money="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Money.invalid }" required />
+            <div *ngIf="f.submitted && Money.invalid" class="invalid-feedback">
+              <div *ngIf="Money.errors.required">Money is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="text" class="form-control" placeholder="Enter Email ID" name="Email" [(ngModel)]="model.Email" #Email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Email.invalid }" required email />
+            <div *ngIf="f.submitted && Email.invalid" class="invalid-feedback">
+              <div *ngIf="Email.errors.required">Email is required</div>
+              <div *ngIf="Email.errors.required">Email must be a valid email address</div>
+            </div>
+          </div>
+          <div class="form-group text-center" style="align-content: center;">
+
+            <button mat-button class="btn " style="background-color:white">Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

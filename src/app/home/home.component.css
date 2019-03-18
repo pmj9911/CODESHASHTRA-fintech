@@ -1,0 +1,56 @@
+.body{
+    font-family: Bahnschrift;
+    text-align: center;
+    width: 100%;
+    /* overflow-x: hidden; */
+
+}
+
+.CardImage{
+    margin: 0px;
+    border: none;
+
+}
+
+.DivCss{
+    align-items: center;
+    color:grey;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+
+.jumbotron{
+    padding: 0px !important;
+    height: 655px !important;
+    border-radius: 0px !important;
+    width: 100% !important;
+}
+
+
+.icon{
+
+    font-size: 70px;
+    color: #3d9edb;
+    padding-bottom: 20px;
+}
+
+.logo{
+    width: 40%;
+    position: inherit;
+}
+
+.photo{
+    width: 15%;
+    border-radius: 50%;
+}
+
+.ForLink{
+    color:#00a8e5 !important;
+
+}
+
+.ForFooter{
+    border:none;
+}

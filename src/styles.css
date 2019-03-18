@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.decor {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #ddd;
+    color: black;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: white;
+}

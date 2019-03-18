@@ -1,0 +1,110 @@
+<!--<form class="form-inline">-->
+<!--<input class="form-control" name="searchInput" placeholder="Search" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">-->
+<!--<button class="btn btn-outline-primary" (click)="searchText=''">X</button>-->
+<!--</form><br>-->
+<div id="mySidebar" class="sidebar">
+    <br>
+    <br>
+    <br>
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
+    <a >Profile</a>
+    <a >Donors</a>
+    <a >Companies</a>
+    <a></a>
+</div>
+
+<div id="main">
+    <button class="openbtn" (click)="openNav()">☰</button>
+
+</div>
+
+<div class="container">
+
+
+    <!-- Page Features -->
+
+    <!-- Team -->
+    <!--<section id="team" class="pb-5" >-->
+
+    <div class="container">
+        <router-outlet class="center-content"></router-outlet>
+        <h5 class="section-title h1">Donors</h5>
+        <div class="row" >
+
+            <div class="col-xs-12 col-sm-6 col-md-4"  *ngFor="let donor of DonorArray">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card" *ngIf="filterDonor(donor)">
+                                <div class="card-body text-center">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <h4 class="card-title">{{donor.CName}}</h4>
+                                    <p class="card-text">E-mail: {{donor.Email}}</p>
+                                    <p class="card-text">POC number: {{donor.PocNo}}</p>
+                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <h4 class="card-title">{{donor.CName}}</h4>
+                                    <p class="card-text">POC number: {{donor.PocNo}}</p>
+                                    <a href="#" class="btn btn-primary btn-sm" routerLink="childReceiver" routerLinkActive="active" ><i class="fa fa-plus" >View Request</i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>Individual Donors</h3>
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-6 col-md-4"  *ngFor="let donor of DonorArray1" >
+
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card" *ngIf="filterDonor(donor)">
+                                <div class="card-body text-center">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <h4 class="card-title">{{donor.Name}}</h4>
+                                    <p class="card-text">E-mail: {{donor.Email}}</p>
+                                    <p class="card-text">POC number: {{donor.ContactNo}}</p>
+                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <h4 class="card-title">{{donor.ContactNo}}</h4>
+                                    <p class="card-text">POC number: {{donor.PocNo}}</p>
+                                    <a href="#" class="btn btn-primary btn-sm" routerLink="childReceiver" routerLinkActive="active" ><i class="fa fa-plus" >View Request</i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="btn btn-primary btn-sm text-center" routerLink="childReceiver" routerLinkActive="active"  ><i class="fa fa-plus" >Public Request</i></div>
+    </div>
+
+
+</div>
